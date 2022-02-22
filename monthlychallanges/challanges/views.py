@@ -29,5 +29,5 @@ def monthlychallanges(request, month):
     elif month == "december":
         challange_text = "This is the december page"  
     else:
-        return HttpResponseNotFound      
+        return HttpResponseNotFound("path does not exit")      
     return HttpResponse(challange_text)
