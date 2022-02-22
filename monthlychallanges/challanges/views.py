@@ -1,39 +1,33 @@
-from django.http import HttpResponse
+from django.http import HttpResponse , HttpResponseNotFound
 from django.shortcuts import render
 
-# Create your views here.
-def january(request):
-    return HttpResponse("This is the january page")
 
-def february(request):
-    return HttpResponse("This is the february page")
-
-def march(request):
-    return HttpResponse("This is the march page")
-
-def april(request):
-    return HttpResponse("This is the april page")
-
-def may(request):
-    return HttpResponse("This is the may page")
-
-def june(request):
-    return HttpResponse("This is the june page")
-
-def july(request):
-    return HttpResponse("This is the july page")
-
-def august(request):
-    return HttpResponse("This is the july page")
-
-def september(request):
-    return HttpResponse("This is the july page")
-
-def october(request):
-    return HttpResponse("This is the october page")
-
-def november(request):
-    return HttpResponse("This is the november page")
-
-def december(request):
-    return HttpResponse("This is the december page")
+def monthlychallanges(request, month):
+    challange_text = None
+    if month == "january":
+        challange_text = "This is the january page"
+    elif month == "february":
+        challange_text = "This is the february page"
+    elif month == "march":
+        challange_text = "This is the march page"    
+    elif month == "april":
+        challange_text = "This is the april page"  
+    elif month == "may":
+        challange_text = "This is the may page"  
+    elif month == "june":
+        challange_text = "This is the june page"   
+    elif month == "july":
+        challange_text = "This is the july page"        
+    elif month == "august":
+        challange_text = "This is the august page"     
+    elif month == "september":
+        challange_text = "This is the september page" 
+    elif month == "october":
+        challange_text = "This is the october page"   
+    elif month == "november":
+        challange_text = "This is the november page" 
+    elif month == "december":
+        challange_text = "This is the december page"  
+    else:
+        return HttpResponseNotFound      
+    return HttpResponse(challange_text)
