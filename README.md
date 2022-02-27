@@ -12,7 +12,7 @@ Creating a Django Project:
 ```python
 django-admin startproject <projectname>
 ```
-Create a Django Project:
+Create App in Django Project:
 
 ```python
 python3 manage.py startapp <appname>
